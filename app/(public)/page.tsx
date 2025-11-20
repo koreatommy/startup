@@ -5,6 +5,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle
+} from "@/components/ui/dialog";
+import {
   Lightbulb,
   BookOpen,
   Users,
@@ -31,18 +38,21 @@ import { useState } from "react";
 export default function LandingPage() {
   const [email, setEmail] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [downloadDialogOpen, setDownloadDialogOpen] = useState(false);
+  const [inquiryDialogOpen, setInquiryDialogOpen] = useState(false);
+  const [subscribeDialogOpen, setSubscribeDialogOpen] = useState(false);
 
   const handleDownload = () => {
-    alert("워크북 다운로드 기능은 곧 제공됩니다.");
+    setDownloadDialogOpen(true);
   };
 
   const handleInquiry = () => {
-    alert("교육문의하기 기능은 곧 제공됩니다.");
+    setInquiryDialogOpen(true);
   };
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("이메일 구독이 완료되었습니다!");
+    setSubscribeDialogOpen(true);
     setEmail("");
   };
 
@@ -870,6 +880,87 @@ export default function LandingPage() {
           다운로드
         </Button>
       </div>
+
+      {/* Download Dialog */}
+      <Dialog open={downloadDialogOpen} onOpenChange={setDownloadDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-gray-900">
+              워크북 다운로드
+            </DialogTitle>
+            <DialogDescription className="text-base text-gray-600 pt-2">
+              워크북 다운로드 기능은 곧 제공됩니다.
+              <br />
+              문의사항이 있으시면 교육문의하기를 이용해주세요.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-end gap-3 pt-4">
+            <Button
+              variant="outline"
+              onClick={() => setDownloadDialogOpen(false)}
+            >
+              닫기
+            </Button>
+            <Button
+              onClick={() => {
+                setDownloadDialogOpen(false);
+                setInquiryDialogOpen(true);
+              }}
+              className="bg-mint-500 hover:bg-mint-600 text-white"
+            >
+              교육문의하기
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Inquiry Dialog */}
+      <Dialog open={inquiryDialogOpen} onOpenChange={setInquiryDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-gray-900">
+              교육문의하기
+            </DialogTitle>
+            <DialogDescription className="text-base text-gray-600 pt-2">
+              교육문의하기 기능은 곧 제공됩니다.
+              <br />
+              빠른 시일 내에 연락드리겠습니다.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-end pt-4">
+            <Button
+              onClick={() => setInquiryDialogOpen(false)}
+              className="bg-mint-500 hover:bg-mint-600 text-white"
+            >
+              확인
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Subscribe Dialog */}
+      <Dialog open={subscribeDialogOpen} onOpenChange={setSubscribeDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-gray-900">
+              구독 완료
+            </DialogTitle>
+            <DialogDescription className="text-base text-gray-600 pt-2">
+              이메일 구독이 완료되었습니다!
+              <br />
+              새로운 소식과 업데이트를 이메일로 받아보실 수 있습니다.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-end pt-4">
+            <Button
+              onClick={() => setSubscribeDialogOpen(false)}
+              className="bg-mint-500 hover:bg-mint-600 text-white"
+            >
+              확인
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <style jsx>{`
         @keyframes fade-in {
