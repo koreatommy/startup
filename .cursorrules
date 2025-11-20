@@ -1,0 +1,39 @@
+# Next.js 15 풀스택 SaaS 템플릿 프로젝트
+
+## 기술 스택
+- Framework: Next.js 15 (App Router, TypeScript)
+- UI: Tailwind CSS + shadcn/ui
+- Auth: Clerk (email / social 로그인 지원)
+- DB: Supabase PostgreSQL + Prisma ORM
+- 배포: Vercel (GitHub 연동, 자동 배포)
+- 코드 품질: ESLint + Prettier
+
+## 프로젝트 구조
+- app/ - Next.js App Router 기반 페이지 및 라우트
+  - (public)/ - 공개 페이지 (홈, 로그인, 회원가입)
+  - (protected)/ - 인증 필요 페이지 (대시보드 등)
+  - api/ - API 라우트 핸들러
+- components/ - React 컴포넌트
+  - ui/ - shadcn/ui 컴포넌트
+  - layout/ - 레이아웃 컴포넌트
+  - shared/ - 공용 컴포넌트
+- lib/ - 유틸리티 및 헬퍼 함수
+  - prisma.ts - Prisma 클라이언트 싱글턴
+  - clerk.ts - Clerk 헬퍼 함수
+- prisma/ - Prisma 스키마 및 마이그레이션
+
+## 코딩 규칙
+- TypeScript를 엄격 모드로 사용
+- App Router 기반 서버 컴포넌트 우선 사용
+- 클라이언트 컴포넌트는 'use client' 지시어 명시
+- shadcn/ui 컴포넌트를 기본 UI 컴포넌트로 사용
+- Prisma를 통한 데이터베이스 접근
+- Clerk를 통한 인증 처리
+- Tailwind CSS로 스타일링
+
+## 파일 네이밍
+- 컴포넌트: PascalCase (예: TodoList.tsx)
+- 페이지: page.tsx, layout.tsx, loading.tsx, error.tsx
+- API 라우트: route.ts
+- 유틸리티: camelCase (예: formatDate.ts)
+
