@@ -12,20 +12,17 @@ export async function GET() {
 
     const todos = await prisma.todo.findMany({
       where: {
-        userId,
+        userId
       },
       orderBy: {
-        createdAt: "desc",
-      },
+        createdAt: "desc"
+      }
     });
 
     return NextResponse.json(todos);
   } catch (error) {
     console.error("Todo 목록 조회 오류:", error);
-    return NextResponse.json(
-      { error: "Todo 목록을 불러오는데 실패했습니다." },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Todo 목록을 불러오는데 실패했습니다." }, { status: 500 });
   }
 }
 
@@ -48,8 +45,8 @@ export async function POST(request: NextRequest) {
       data: {
         userId,
         title: title.trim(),
-        completed: false,
-      },
+        completed: false
+      }
     });
 
     return NextResponse.json(todo, { status: 201 });
@@ -58,4 +55,3 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Todo 생성에 실패했습니다." }, { status: 500 });
   }
 }
-

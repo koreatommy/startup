@@ -49,9 +49,9 @@ export default function TodoList() {
       const response = await fetch("/api/todos", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify({ title: newTodo.trim() }),
+        body: JSON.stringify({ title: newTodo.trim() })
       });
 
       if (!response.ok) {
@@ -74,9 +74,9 @@ export default function TodoList() {
       const response = await fetch(`/api/todos/${id}`, {
         method: "PATCH",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify({ completed: !completed }),
+        body: JSON.stringify({ completed: !completed })
       });
 
       if (!response.ok) {
@@ -94,7 +94,7 @@ export default function TodoList() {
   const handleDeleteTodo = async (id: number) => {
     try {
       const response = await fetch(`/api/todos/${id}`, {
-        method: "DELETE",
+        method: "DELETE"
       });
 
       if (!response.ok) {
@@ -175,4 +175,3 @@ export default function TodoList() {
     </Card>
   );
 }
-

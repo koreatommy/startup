@@ -22,7 +22,7 @@ import {
   Briefcase,
   GraduationCap,
   Award,
-  MapPin,
+  MapPin
 } from "lucide-react";
 import { useState } from "react";
 
@@ -49,43 +49,43 @@ export default function LandingPage() {
       title: "단계별 프로젝트형 학습",
       description: "체계적인 20차시 커리큘럼으로 창업 역량을 단계적으로 성장시킵니다.",
       color: "text-mint-500",
-      bgColor: "bg-mint-50",
+      bgColor: "bg-mint-50"
     },
     {
       icon: BookOpen,
       title: "실습 중심 워크북 체계",
       description: "이론보다 실습에 집중한 워크북으로 실제 경험을 통해 학습합니다.",
       color: "text-orange-500",
-      bgColor: "bg-orange-50",
+      bgColor: "bg-orange-50"
     },
     {
       icon: Users,
       title: "청소년 친화형 사례 기반",
       description: "청소년의 눈높이에 맞춘 실제 사례와 콘텐츠로 몰입도를 높입니다.",
       color: "text-mint-500",
-      bgColor: "bg-mint-50",
+      bgColor: "bg-mint-50"
     },
     {
       icon: Sparkles,
       title: "STEAM 융합형 창의교육",
       description: "과학, 기술, 예술, 수학을 통합한 창의적 문제해결 교육을 제공합니다.",
       color: "text-orange-500",
-      bgColor: "bg-orange-50",
+      bgColor: "bg-orange-50"
     },
     {
       icon: MessageSquare,
       title: "협업·소통 중심",
       description: "팀워크와 의사소통 능력을 키우는 협업 프로젝트 중심 학습입니다.",
       color: "text-mint-500",
-      bgColor: "bg-mint-50",
+      bgColor: "bg-mint-50"
     },
     {
       icon: TrendingUp,
       title: "성장 중심 평가 구조",
       description: "결과보다 과정을 중시하며 학습자의 성장을 측정하는 평가 시스템입니다.",
       color: "text-orange-500",
-      bgColor: "bg-orange-50",
-    },
+      bgColor: "bg-orange-50"
+    }
   ];
 
   const curriculum = [
@@ -97,8 +97,12 @@ export default function LandingPage() {
     { session: 6, title: "시장 검증", description: "실제 사용자 반응을 통해 검증합니다" },
     { session: 7, title: "비즈니스 모델", description: "지속 가능한 수익 모델을 설계합니다" },
     { session: 8, title: "마케팅 전략", description: "고객에게 다가갈 방법을 기획합니다" },
-    { session: 9, title: "피칭 준비", description: "아이디어를 효과적으로 전달할 방법을 학습합니다" },
-    { session: 10, title: "피칭 & 성찰", description: "최종 발표를 하고 전체 과정을 성찰합니다" },
+    {
+      session: 9,
+      title: "피칭 준비",
+      description: "아이디어를 효과적으로 전달할 방법을 학습합니다"
+    },
+    { session: 10, title: "피칭 & 성찰", description: "최종 발표를 하고 전체 과정을 성찰합니다" }
   ];
 
   const workbookContents = [
@@ -107,86 +111,98 @@ export default function LandingPage() {
       title: "창업 이해와 팀 기반 창의 활동",
       subtitle: "Entrepreneurship and Team Creativity",
       color: "from-purple-500 to-pink-500",
-      borderColor: "border-purple-200",
+      borderColor: "border-purple-200"
     },
     {
       number: "02",
       title: "창업의 기초 및 개념 이해하기",
       subtitle: "Basics & Concepts of Entrepreneurship",
       color: "from-pink-500 to-red-500",
-      borderColor: "border-pink-200",
+      borderColor: "border-pink-200"
     },
     {
       number: "03",
       title: "시장조사 및 분석",
       subtitle: "Market Research & Analysis",
       color: "from-orange-500 to-orange-400",
-      borderColor: "border-orange-200",
+      borderColor: "border-orange-200"
     },
     {
       number: "04",
       title: "고객 문제와 해결 방안",
       subtitle: "Customer Pain & Solution",
       color: "from-yellow-400 to-lime-400",
-      borderColor: "border-yellow-200",
+      borderColor: "border-yellow-200"
     },
     {
       number: "05",
       title: "제품 서비스 설계",
       subtitle: "Product / Service Design",
       color: "from-green-500 to-emerald-500",
-      borderColor: "border-green-200",
+      borderColor: "border-green-200"
     },
     {
       number: "06",
       title: "비즈니스 모델 설계",
       subtitle: "Business Model Design",
       color: "from-teal-400 to-cyan-400",
-      borderColor: "border-teal-200",
+      borderColor: "border-teal-200"
     },
     {
       number: "07",
       title: "운영 계획 및 실행 전략",
       subtitle: "Operating & Execution Plan",
       color: "from-blue-500 to-blue-400",
-      borderColor: "border-blue-200",
+      borderColor: "border-blue-200"
     },
     {
       number: "08",
       title: "마케팅 홍보 전략",
       subtitle: "Marketing & Promotion Strategy",
       color: "from-blue-600 to-indigo-500",
-      borderColor: "border-blue-300",
+      borderColor: "border-blue-300"
     },
     {
       number: "09",
       title: "재무 계획",
       subtitle: "Financial Plan",
       color: "from-indigo-600 to-purple-600",
-      borderColor: "border-indigo-300",
+      borderColor: "border-indigo-300"
     },
     {
       number: "10",
       title: "발표 및 피칭 전략",
       subtitle: "Presentation & Pitching Strategy",
       color: "from-purple-700 to-purple-800",
-      borderColor: "border-purple-400",
-    },
+      borderColor: "border-purple-400"
+    }
   ];
 
   const effects = [
-    { icon: Lightbulb, title: "문제해결력", description: "복잡한 문제를 체계적으로 분석하고 해결하는 능력" },
-    { icon: Sparkles, title: "창의적 사고력", description: "새로운 관점에서 아이디어를 창출하는 능력" },
-    { icon: Users, title: "협업·의사소통", description: "팀원과 효과적으로 소통하고 협력하는 능력" },
+    {
+      icon: Lightbulb,
+      title: "문제해결력",
+      description: "복잡한 문제를 체계적으로 분석하고 해결하는 능력"
+    },
+    {
+      icon: Sparkles,
+      title: "창의적 사고력",
+      description: "새로운 관점에서 아이디어를 창출하는 능력"
+    },
+    {
+      icon: Users,
+      title: "협업·의사소통",
+      description: "팀원과 효과적으로 소통하고 협력하는 능력"
+    },
     { icon: Rocket, title: "자기주도성", description: "스스로 목표를 설정하고 추진하는 능력" },
-    { icon: Heart, title: "사회적 책임 의식", description: "사회 문제를 해결하려는 의지와 책임감" },
+    { icon: Heart, title: "사회적 책임 의식", description: "사회 문제를 해결하려는 의지와 책임감" }
   ];
 
   const operationTypes = [
     { type: "정규수업형", description: "학교 정규 수업 시간에 운영하는 형태", icon: GraduationCap },
     { type: "창업캠프형", description: "집중적인 단기 캠프 형태로 운영", icon: Briefcase },
     { type: "동아리형", description: "자율동아리 활동으로 진행하는 형태", icon: Users },
-    { type: "공공기관형", description: "청소년 기관, 도서관 등에서 운영", icon: MapPin },
+    { type: "공공기관형", description: "청소년 기관, 도서관 등에서 운영", icon: MapPin }
   ];
 
   return (
@@ -201,13 +217,28 @@ export default function LandingPage() {
             </span>
           </div>
           <div className="flex gap-4">
-            <Button variant="ghost" onClick={() => document.getElementById("curriculum")?.scrollIntoView({ behavior: "smooth" })}>
+            <Button
+              variant="ghost"
+              onClick={() =>
+                document.getElementById("curriculum")?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
               커리큘럼
             </Button>
-            <Button variant="ghost" onClick={() => document.getElementById("workbook")?.scrollIntoView({ behavior: "smooth" })}>
+            <Button
+              variant="ghost"
+              onClick={() =>
+                document.getElementById("workbook")?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
               워크북
             </Button>
-            <Button variant="ghost" onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })}>
+            <Button
+              variant="ghost"
+              onClick={() =>
+                document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
               특징
             </Button>
             <Button onClick={handleDownload} className="bg-mint-500 hover:bg-mint-600 text-white">
@@ -223,9 +254,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
-              <Badge className="bg-mint-100 text-mint-700 border-mint-200">
-                창업교육 워크북
-              </Badge>
+              <Badge className="bg-mint-100 text-mint-700 border-mint-200">창업교육 워크북</Badge>
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
                 미래의 문제해결가를 키우는
                 <span className="block bg-gradient-to-r from-mint-500 to-orange-500 bg-clip-text text-transparent mt-2">
@@ -256,7 +285,7 @@ export default function LandingPage() {
                 </Button>
               </div>
               <p className="text-sm text-gray-500 italic">
-                "배우는 창업이 아니라, 경험하는 창업."
+                &ldquo;배우는 창업이 아니라, 경험하는 창업.&rdquo;
               </p>
             </div>
             <div className="relative animate-fade-in-delay">
@@ -285,9 +314,9 @@ export default function LandingPage() {
               <span className="text-mint-600">문제 해결 중심의 과정</span>입니다
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Y·Start Up 창업교육과정은 청소년이 실제로 마주하는 문제를 발견하고,
-              창의적 해결책을 도출하며, 팀과 함께 프로젝트를 완성하는 경험 중심 교육입니다.
-              이론보다 실습, 결과보다 과정을 중시하는 교육 철학으로 학습자의 역량을 키웁니다.
+              Y·Start Up 창업교육과정은 청소년이 실제로 마주하는 문제를 발견하고, 창의적 해결책을
+              도출하며, 팀과 함께 프로젝트를 완성하는 경험 중심 교육입니다. 이론보다 실습, 결과보다
+              과정을 중시하는 교육 철학으로 학습자의 역량을 키웁니다.
             </p>
           </div>
         </div>
@@ -311,9 +340,14 @@ export default function LandingPage() {
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <Card
+                  key={index}
+                  className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                >
                   <CardHeader>
-                    <div className={`w-12 h-12 ${feature.bgColor} rounded-xl flex items-center justify-center mb-4`}>
+                    <div
+                      className={`w-12 h-12 ${feature.bgColor} rounded-xl flex items-center justify-center mb-4`}
+                    >
                       <Icon className={`h-6 w-6 ${feature.color}`} />
                     </div>
                     <CardTitle className="text-xl">{feature.title}</CardTitle>
@@ -332,9 +366,7 @@ export default function LandingPage() {
       <section id="curriculum" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="bg-mint-100 text-mint-700 border-mint-200 mb-4">
-              커리큘럼
-            </Badge>
+            <Badge className="bg-mint-100 text-mint-700 border-mint-200 mb-4">커리큘럼</Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               총 10회 20차시 창업교육 로드맵
             </h2>
@@ -354,7 +386,9 @@ export default function LandingPage() {
                       <CardTitle className="text-lg">{item.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <CardDescription className="text-sm text-center">{item.description}</CardDescription>
+                      <CardDescription className="text-sm text-center">
+                        {item.description}
+                      </CardDescription>
                     </CardContent>
                   </Card>
                 </div>
@@ -386,13 +420,17 @@ export default function LandingPage() {
                   className={`bg-white border-2 ${item.borderColor} hover:border-opacity-60 transition-all duration-300 hover:shadow-lg`}
                 >
                   <CardHeader className="text-center pb-4">
-                    <div className={`w-12 h-12 bg-gradient-to-br ${item.color} rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-lg shadow-md`}>
+                    <div
+                      className={`w-12 h-12 bg-gradient-to-br ${item.color} rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-lg shadow-md`}
+                    >
                       {item.number}
                     </div>
                     <CardTitle className="text-lg">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-sm text-center">{item.subtitle}</CardDescription>
+                    <CardDescription className="text-sm text-center">
+                      {item.subtitle}
+                    </CardDescription>
                   </CardContent>
                 </Card>
               ))}
@@ -458,7 +496,9 @@ export default function LandingPage() {
               <CardContent className="space-y-3">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-mint-500 mt-0.5 flex-shrink-0" />
-                  <p className="text-gray-700">학습자의 자율성을 최대한 보장하며 적절한 시점에 코칭을 제공합니다</p>
+                  <p className="text-gray-700">
+                    학습자의 자율성을 최대한 보장하며 적절한 시점에 코칭을 제공합니다
+                  </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-mint-500 mt-0.5 flex-shrink-0" />
@@ -494,7 +534,7 @@ export default function LandingPage() {
                     { icon: BookOpen, title: "기록하기", desc: "워크북에 과정을 남기세요" },
                     { icon: Users, title: "협업하기", desc: "팀원과 함께 아이디어를 발전시키세요" },
                     { icon: Presentation, title: "발표하기", desc: "생각과 결과를 나누세요" },
-                    { icon: Heart, title: "성찰하기", desc: "경험을 통해 배움을 내재화하세요" },
+                    { icon: Heart, title: "성찰하기", desc: "경험을 통해 배움을 내재화하세요" }
                   ].map((item, index) => {
                     const Icon = item.icon;
                     return (
@@ -518,9 +558,7 @@ export default function LandingPage() {
       <section className="py-20 bg-gradient-to-b from-white to-orange-50/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="bg-mint-100 text-mint-700 border-mint-200 mb-4">
-              교육 효과
-            </Badge>
+            <Badge className="bg-mint-100 text-mint-700 border-mint-200 mb-4">교육 효과</Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               5가지 핵심 역량 향상
             </h2>
@@ -532,7 +570,10 @@ export default function LandingPage() {
             {effects.map((effect, index) => {
               const Icon = effect.icon;
               return (
-                <Card key={index} className="text-center border-2 border-mint-100 hover:border-mint-400 transition-all duration-300 hover:shadow-lg">
+                <Card
+                  key={index}
+                  className="text-center border-2 border-mint-100 hover:border-mint-400 transition-all duration-300 hover:shadow-lg"
+                >
                   <CardHeader>
                     <div className="w-20 h-20 bg-gradient-to-br from-mint-400 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-4 text-white">
                       <Icon className="h-10 w-10" />
@@ -567,7 +608,10 @@ export default function LandingPage() {
             {operationTypes.map((op, index) => {
               const Icon = op.icon;
               return (
-                <Card key={index} className="border-2 border-orange-100 hover:border-orange-400 transition-all duration-300 hover:shadow-lg">
+                <Card
+                  key={index}
+                  className="border-2 border-orange-100 hover:border-orange-400 transition-all duration-300 hover:shadow-lg"
+                >
                   <CardHeader className="text-center">
                     <div className="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Icon className="h-8 w-8 text-orange-600" />
@@ -588,9 +632,7 @@ export default function LandingPage() {
       <section className="py-20 bg-gradient-to-br from-mint-50 to-orange-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="bg-mint-100 text-mint-700 border-mint-200 mb-4">
-              전체 프로세스
-            </Badge>
+            <Badge className="bg-mint-100 text-mint-700 border-mint-200 mb-4">전체 프로세스</Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               문제 해결에서 성찰까지
             </h2>
@@ -604,7 +646,7 @@ export default function LandingPage() {
                   { step: "아이디어", icon: Sparkles },
                   { step: "시장 검증", icon: Target },
                   { step: "제품 설계", icon: Rocket },
-                  { step: "피칭·성찰", icon: Award },
+                  { step: "피칭·성찰", icon: Award }
                 ].map((item, index) => {
                   const Icon = item.icon;
                   return (
@@ -614,7 +656,10 @@ export default function LandingPage() {
                       </div>
                       <p className="text-sm font-semibold text-gray-900 text-center">{item.step}</p>
                       {index < 4 && (
-                        <ArrowRight className="hidden md:block absolute top-8 left-1/2 transform translate-x-4 text-orange-400 h-6 w-6" style={{ left: `${(index + 1) * 20}%` }} />
+                        <ArrowRight
+                          className="hidden md:block absolute top-8 left-1/2 transform translate-x-4 text-orange-400 h-6 w-6"
+                          style={{ left: `${(index + 1) * 20}%` }}
+                        />
                       )}
                     </div>
                   );
@@ -629,9 +674,7 @@ export default function LandingPage() {
       <section className="py-20 bg-gradient-to-br from-mint-500 to-orange-500 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold">
-              지금 바로 시작하세요
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold">지금 바로 시작하세요</h2>
             <p className="text-xl text-white/90">
               워크북을 다운로드하거나 교육문의하기를 이용해보세요
             </p>
@@ -654,7 +697,10 @@ export default function LandingPage() {
               </Button>
             </div>
             <div className="pt-8 border-t border-white/20">
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <form
+                onSubmit={handleSubscribe}
+                className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+              >
                 <Input
                   type="email"
                   placeholder="이메일 주소를 입력하세요"
@@ -684,30 +730,46 @@ export default function LandingPage() {
                 <Rocket className="h-6 w-6 text-mint-400" />
                 <span className="text-xl font-bold">Y·Start Up</span>
               </div>
-              <p className="text-gray-400">
-                미래의 문제해결가를 키우는 창의적 여정
-              </p>
+              <p className="text-gray-400">미래의 문제해결가를 키우는 창의적 여정</p>
             </div>
             <div>
               <h3 className="font-semibold mb-4">빠른 링크</h3>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <button onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-mint-400 transition-colors">
+                  <button
+                    onClick={() =>
+                      document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="hover:text-mint-400 transition-colors"
+                  >
                     특징
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => document.getElementById("curriculum")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-mint-400 transition-colors">
+                  <button
+                    onClick={() =>
+                      document.getElementById("curriculum")?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="hover:text-mint-400 transition-colors"
+                  >
                     커리큘럼
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => document.getElementById("workbook")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-mint-400 transition-colors">
+                  <button
+                    onClick={() =>
+                      document.getElementById("workbook")?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="hover:text-mint-400 transition-colors"
+                  >
                     워크북
                   </button>
                 </li>
                 <li>
-                  <button onClick={handleDownload} className="hover:text-mint-400 transition-colors">
+                  <button
+                    onClick={handleDownload}
+                    className="hover:text-mint-400 transition-colors"
+                  >
                     다운로드
                   </button>
                 </li>
@@ -715,9 +777,7 @@ export default function LandingPage() {
             </div>
             <div>
               <h3 className="font-semibold mb-4">문의</h3>
-              <p className="text-gray-400">
-                프로그램 교육 문의
-              </p>
+              <p className="text-gray-400">프로그램 교육 문의</p>
               <Button onClick={handleInquiry} className="mt-4 bg-mint-500 hover:bg-mint-600">
                 교육문의하기
               </Button>
@@ -759,8 +819,9 @@ export default function LandingPage() {
           animation: fade-in 0.8s ease-out 0.2s both;
         }
         .bg-grid-pattern {
-          background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
-                            linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+          background-image:
+            linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
           background-size: 40px 40px;
         }
       `}</style>

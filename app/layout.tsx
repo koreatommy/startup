@@ -7,11 +7,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Startup SaaS Template",
-  description: "Next.js 15 + Supabase + Prisma + Clerk 풀스택 SaaS 템플릿",
+  description: "Next.js 15 + Supabase + Prisma + Clerk 풀스택 SaaS 템플릿"
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -23,4 +23,3 @@ export default function RootLayout({
     </ClerkProvider>
   );
 }
-

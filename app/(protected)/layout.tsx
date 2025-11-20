@@ -1,11 +1,7 @@
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
 
-export default async function ProtectedLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default async function ProtectedLayout({ children }: { children: React.ReactNode }) {
   const { userId } = await auth();
 
   if (!userId) {
@@ -14,4 +10,3 @@ export default async function ProtectedLayout({
 
   return <>{children}</>;
 }
-

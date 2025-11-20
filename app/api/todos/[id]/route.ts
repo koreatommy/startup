@@ -2,10 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
 
-export async function PATCH(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function PATCH(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { userId } = await auth();
 
@@ -30,8 +27,8 @@ export async function PATCH(
     const todo = await prisma.todo.findFirst({
       where: {
         id: todoId,
-        userId,
-      },
+        userId
+      }
     });
 
     if (!todo) {
@@ -40,11 +37,11 @@ export async function PATCH(
 
     const updatedTodo = await prisma.todo.update({
       where: {
-        id: todoId,
+        id: todoId
       },
       data: {
-        completed,
-      },
+        completed
+      }
     });
 
     return NextResponse.json(updatedTodo);
@@ -75,8 +72,8 @@ export async function DELETE(
     const todo = await prisma.todo.findFirst({
       where: {
         id: todoId,
-        userId,
-      },
+        userId
+      }
     });
 
     if (!todo) {
@@ -85,8 +82,8 @@ export async function DELETE(
 
     await prisma.todo.delete({
       where: {
-        id: todoId,
-      },
+        id: todoId
+      }
     });
 
     return NextResponse.json({ message: "Todo가 삭제되었습니다." });
@@ -95,4 +92,3 @@ export async function DELETE(
     return NextResponse.json({ error: "Todo 삭제에 실패했습니다." }, { status: 500 });
   }
 }
-

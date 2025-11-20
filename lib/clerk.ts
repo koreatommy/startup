@@ -16,4 +16,3 @@ export async function getCurrentUserId(): Promise<string | null> {
 export async function getCurrentUser() {
   return await currentUser();
 }
-
