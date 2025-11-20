@@ -22,12 +22,15 @@ import {
   Briefcase,
   GraduationCap,
   Award,
-  MapPin
+  MapPin,
+  Menu,
+  X
 } from "lucide-react";
 import { useState } from "react";
 
 export default function LandingPage() {
   const [email, setEmail] = useState("");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleDownload = () => {
     alert("워크북 다운로드 기능은 곧 제공됩니다.");
@@ -209,41 +212,108 @@ export default function LandingPage() {
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Rocket className="h-6 w-6 text-mint-500" />
-            <span className="text-xl font-bold bg-gradient-to-r from-mint-500 to-orange-500 bg-clip-text text-transparent">
-              Y·Start Up
-            </span>
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Rocket className="h-6 w-6 text-mint-500" />
+              <span className="text-xl font-bold bg-gradient-to-r from-mint-500 to-orange-500 bg-clip-text text-transparent">
+                Y·Start Up
+              </span>
+            </div>
+            {/* Desktop Menu */}
+            <div className="hidden md:flex gap-4">
+              <Button
+                variant="ghost"
+                onClick={() => {
+                  document.getElementById("curriculum")?.scrollIntoView({ behavior: "smooth" });
+                  setMobileMenuOpen(false);
+                }}
+              >
+                커리큘럼
+              </Button>
+              <Button
+                variant="ghost"
+                onClick={() => {
+                  document.getElementById("workbook")?.scrollIntoView({ behavior: "smooth" });
+                  setMobileMenuOpen(false);
+                }}
+              >
+                워크북
+              </Button>
+              <Button
+                variant="ghost"
+                onClick={() => {
+                  document.getElementById("features")?.scrollIntoView({ behavior: "smooth" });
+                  setMobileMenuOpen(false);
+                }}
+              >
+                특징
+              </Button>
+              <Button onClick={handleDownload} className="bg-mint-500 hover:bg-mint-600 text-white">
+                다운로드
+              </Button>
+            </div>
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              className="md:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
+            >
+              {mobileMenuOpen ? (
+                <X className="h-6 w-6 text-gray-700" />
+              ) : (
+                <Menu className="h-6 w-6 text-gray-700" />
+              )}
+            </Button>
           </div>
-          <div className="flex gap-4">
-            <Button
-              variant="ghost"
-              onClick={() =>
-                document.getElementById("curriculum")?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              커리큘럼
-            </Button>
-            <Button
-              variant="ghost"
-              onClick={() =>
-                document.getElementById("workbook")?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              워크북
-            </Button>
-            <Button
-              variant="ghost"
-              onClick={() =>
-                document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              특징
-            </Button>
-            <Button onClick={handleDownload} className="bg-mint-500 hover:bg-mint-600 text-white">
-              다운로드
-            </Button>
+          {/* Mobile Menu */}
+          <div
+            className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+              mobileMenuOpen ? "max-h-96 opacity-100 mt-4 pb-4 border-t pt-4" : "max-h-0 opacity-0"
+            }`}
+          >
+            <div className="flex flex-col gap-2">
+              <Button
+                variant="ghost"
+                className="w-full justify-start text-left"
+                onClick={() => {
+                  document.getElementById("curriculum")?.scrollIntoView({ behavior: "smooth" });
+                  setMobileMenuOpen(false);
+                }}
+              >
+                커리큘럼
+              </Button>
+              <Button
+                variant="ghost"
+                className="w-full justify-start text-left"
+                onClick={() => {
+                  document.getElementById("workbook")?.scrollIntoView({ behavior: "smooth" });
+                  setMobileMenuOpen(false);
+                }}
+              >
+                워크북
+              </Button>
+              <Button
+                variant="ghost"
+                className="w-full justify-start text-left"
+                onClick={() => {
+                  document.getElementById("features")?.scrollIntoView({ behavior: "smooth" });
+                  setMobileMenuOpen(false);
+                }}
+              >
+                특징
+              </Button>
+              <Button
+                onClick={() => {
+                  handleDownload();
+                  setMobileMenuOpen(false);
+                }}
+                className="w-full bg-mint-500 hover:bg-mint-600 text-white"
+              >
+                다운로드
+              </Button>
+            </div>
           </div>
         </div>
       </nav>
