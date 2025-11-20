@@ -4,6 +4,11 @@ import { NextResponse } from "next/server";
 const isProtectedRoute = createRouteMatcher(["/dashboard(.*)", "/account(.*)"]);
 
 export default clerkMiddleware(async (auth, req) => {
+  // 환경 변수가 없으면 미들웨어를 건너뜀
+  if (!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || !process.env.CLERK_SECRET_KEY) {
+    return NextResponse.next();
+  }
+
   if (isProtectedRoute(req)) {
     const { userId } = await auth();
     if (!userId) {
@@ -12,6 +17,8 @@ export default clerkMiddleware(async (auth, req) => {
       return NextResponse.redirect(signInUrl);
     }
   }
+
+  return NextResponse.next();
 });
 
 export const config = {
