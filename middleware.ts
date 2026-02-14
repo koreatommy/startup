@@ -3,9 +3,16 @@ import { NextResponse } from "next/server";
 
 const isProtectedRoute = createRouteMatcher(["/dashboard(.*)", "/account(.*)"]);
 
+/** Clerk 키가 실제 발급된 키인지 (플레이스홀더/미설정이면 false) */
+function isClerkConfigured(): boolean {
+  const pk = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  const sk = process.env.CLERK_SECRET_KEY;
+  if (!pk || !sk || pk.startsWith("PLACEHOLDER_") || sk.startsWith("PLACEHOLDER_")) return false;
+  return pk.startsWith("pk_test_") || pk.startsWith("pk_live_");
+}
+
 export default clerkMiddleware(async (auth, req) => {
-  // 환경 변수가 없으면 미들웨어를 건너뜀
-  if (!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || !process.env.CLERK_SECRET_KEY) {
+  if (!isClerkConfigured()) {
     return NextResponse.next();
   }
 

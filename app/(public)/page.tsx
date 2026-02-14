@@ -885,9 +885,7 @@ export default function LandingPage() {
       <Dialog open={downloadDialogOpen} onOpenChange={setDownloadDialogOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-gray-900">
-              워크북 다운로드
-            </DialogTitle>
+            <DialogTitle className="text-2xl font-bold text-gray-900">워크북 다운로드</DialogTitle>
             <DialogDescription className="text-base text-gray-600 pt-2">
               워크북 다운로드 기능은 곧 제공됩니다.
               <br />
@@ -895,10 +893,7 @@ export default function LandingPage() {
             </DialogDescription>
           </DialogHeader>
           <div className="flex justify-end gap-3 pt-4">
-            <Button
-              variant="outline"
-              onClick={() => setDownloadDialogOpen(false)}
-            >
+            <Button variant="outline" onClick={() => setDownloadDialogOpen(false)}>
               닫기
             </Button>
             <Button
@@ -918,9 +913,7 @@ export default function LandingPage() {
       <Dialog open={inquiryDialogOpen} onOpenChange={setInquiryDialogOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-gray-900">
-              교육문의하기
-            </DialogTitle>
+            <DialogTitle className="text-2xl font-bold text-gray-900">교육문의하기</DialogTitle>
             <DialogDescription className="text-base text-gray-600 pt-2">
               교육문의하기 기능은 곧 제공됩니다.
               <br />
@@ -942,9 +935,7 @@ export default function LandingPage() {
       <Dialog open={subscribeDialogOpen} onOpenChange={setSubscribeDialogOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-gray-900">
-              구독 완료
-            </DialogTitle>
+            <DialogTitle className="text-2xl font-bold text-gray-900">구독 완료</DialogTitle>
             <DialogDescription className="text-base text-gray-600 pt-2">
               이메일 구독이 완료되었습니다!
               <br />
